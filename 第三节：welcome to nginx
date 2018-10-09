@@ -11,7 +11,7 @@ echo '<h2>hello,docker</h2>' > /usr/share/nginx/html/index.html;
 exit;
 # 修改了容器的内容，也改动了容器的存储层，可以通过docker diff 查看具体的改动;
 
-# 将容器的修改保存为一个新的镜像,在原有的镜像的基础上，再加上容器的存储层构成新的镜像;
+# 将容器的修改保存为一个新的镜像,在原有的镜像的基础上，再加上容器的存储层构成新的镜像;(慎用)
 docker commit --author "Sean <vip120@126.com>" --message "修改了默认网页" webserver nginx:v2
 # --author 指定作者  --message 记录本次修改的内容 (可省略)
 
