@@ -1,0 +1,14 @@
+#检查是否安装正确
+docker info
+
+#拉取一个镜像
+docker pull image_name
+
+# 列出本机上所有顶级镜像
+docker image ls
+
+# 列出部分镜像
+docker image ls xxxx  (比如：ubuntu,nginx)
+
+# 删除镜像
+docker image rm <镜像 ID>

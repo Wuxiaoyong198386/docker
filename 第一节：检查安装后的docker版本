@@ -1,0 +1,10 @@
+docker --version
+
+#Compose 是一个用户定义和运行多个容器的 Docker 应用程序。
+#在 Compose 中你可以使用 YAML 文件来配置你的应用服务
+
+docker-compose --version
+
+#是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，
+#或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker
+docker-machine --version

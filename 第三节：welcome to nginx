@@ -1,0 +1,21 @@
+# 定制一个web服务器为例子，讲解镜像是如何构建;
+# 用nginx镜像启动一个容器，命名为webserver,并且映射了80端口，这样我们就可以用浏览器访问这个nginx服务器;
+# 80:80 本地端口：容器端口;
+docker run --name webserver -d -p 80:80 nginx
+
+# 修改welcome页面
+# 交互式终端正进入webserver 容器，并执行了bash命令，就获得了一个可操作的shell
+docker exce -it webserver bash
+# 修改html内容
+echo '<h2>hello,docker</h2>' > /usr/share/nginx/html/index.html;
+exit;
+# 修改了容器的内容，也改动了容器的存储层，可以通过docker diff 查看具体的改动;
+
+# 将容器的修改保存为一个新的镜像,在原有的镜像的基础上，再加上容器的存储层构成新的镜像;
+docker commit --author "Sean <vip120@126.com>" --message "修改了默认网页" webserver nginx:v2
+# --author 指定作者  --message 记录本次修改的内容 (可省略)
+
+# 运行新的v2镜像
+docker run --name webserver_v2 -d -p 81:80 nginx:v2
+# http://127.0.0.1:81 
+
