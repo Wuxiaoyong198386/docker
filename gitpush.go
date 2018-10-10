@@ -17,7 +17,7 @@ const (
 
 func main() {
 
-		//读取文件的信息+
+		//读取文件的信息  +
 		bytes, err := ioutil.ReadFile(CONFFILE)
 		if err != nil {
 			fmt.Println(err.Error())
@@ -30,6 +30,7 @@ func main() {
 
 		pwd, _ := os.Getwd()
 		for _, val := range cmdarr {
+			fmt.Println("test")
 			tmpval := strings.TrimSpace(val)
 
 			//如果是新命令开始，那么是切换目录操作
