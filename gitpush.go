@@ -14,7 +14,7 @@ const (
 )
 
 func main() {
-
+		var cmd *exec.Cmd
 		//读取文件的信息  +
 		bytes, err := ioutil.ReadFile(CONFFILE)
 		if err != nil {
@@ -53,7 +53,7 @@ func main() {
 					execCommand(command, params)
 				}else{
 					//command := cmdarr[0]
-					cmd := exec.Command("sl")
+					cmd = exec.Command("sl")
 					cmd.Start()
 					cmd.Wait()
 				}
