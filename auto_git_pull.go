@@ -31,7 +31,6 @@ func main() {
 		//是否新的开始
 		isBegin := 1
 		for _, val := range cmdarr {
-			fmt.Println(isBegin)
 			tmpval := strings.TrimSpace(val)
 
 			//如果是新命令开始，那么是切换目录操作
