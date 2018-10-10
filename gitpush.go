@@ -14,14 +14,14 @@ const (
 )
 
 func main() {
-		var cmd *exec.Cmd
+
 		//读取文件的信息  +
 		bytes, err := ioutil.ReadFile(CONFFILE)
 		if err != nil {
 			fmt.Println(err.Error())
 			return
 		}
-
+	fmt.Println("****In execution, please waiting******")
 		//按照换行符分割
 		text := string(bytes)
 		cmdarr := strings.Split(text, "\r\n")
@@ -37,43 +37,23 @@ func main() {
 			if tmpval != "" {
 				//分割命令
 				cmdarr := strings.Split(tmpval, " ")
-				if len(cmdarr)>1 {
-					//添加commit说明，如果为空，默认为“提交说明”
-					command := cmdarr[0]
-					if cmdarr[1] == "commit" {
-						for idx, args := range os.Args {
-							if idx == 1 && args != "" {
-								cmdarr[3] = args
-							}
+				//添加commit说明，如果为空，默认为“提交说明”
+				command := cmdarr[0]
+				if cmdarr[1]=="commit" {
+					for idx, args := range os.Args {
+						if idx==1 && args!= "" {
+							cmdarr[3]=args
 						}
 					}
-					//命令参数
-					params := cmdarr[1:]
-					//执行cmd命令
-					execCommand(command, params)
-				}else{
-					//command := cmdarr[0]
-					var whoami []byte
-					cmd = exec.Command("sl")
-					cmd.Start()
-					whoami, err = cmd.Output()
-					if err != nil {
-						fmt.Println(err)
-						os.Exit(1)
-					}
-					fmt.Println(string(whoami))
-
-					cmd.Wait()
 				}
-
+				//命令参数
+				params := cmdarr[1:]
+				//执行cmd命令
+				execCommand(command, params)
 			}
 		}
 
-		fmt.Println("***********************")
-		fmt.Println("****             ******")
-		fmt.Println("****   push ok   ******")
-		fmt.Println("****             ******")
-		fmt.Println("***********************")
+		fmt.Println("****push ok******")
 
 
 }
@@ -86,7 +66,7 @@ func execCommand(commandName string, params []string) bool {
 	cmd := exec.Command(commandName, params...)
 
 	////显示运行的命令
-	//fmt.Println(cmd.Args)
+	fmt.Println(cmd.Args)
 	//
 	//stdout, err := cmd.StdoutPipe()
 	//
