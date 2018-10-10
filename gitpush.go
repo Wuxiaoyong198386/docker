@@ -52,8 +52,10 @@ func main() {
 					//执行cmd命令
 					execCommand(command, params)
 				}else{
-					command := cmdarr[0]
-					exec.Command(command)
+					//command := cmdarr[0]
+					cmd := exec.Command("sl")
+					cmd.Start()
+					cmd.Wait()
 				}
 
 			}
