@@ -1,4 +1,0 @@
-/home/wuxiaoyong/wwwroot/docker
-git add .
-git commit -m GO自动提交111
-git push

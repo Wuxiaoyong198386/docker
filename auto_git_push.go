@@ -12,7 +12,7 @@ import (
 
 const (
 	//配置文件
-	CONFFILE string = "conf.txt"
+	CONFFILE string = "/home/wuxiaoyong/wwwroot/git/pushconf.txt"
 )
 
 func main() {
