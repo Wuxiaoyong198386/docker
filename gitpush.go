@@ -61,6 +61,8 @@ func main() {
 						os.Exit(1)
 					}
 					fmt.Println(string(whoami))
+					cmd.Start()
+					cmd.Wait()
 				}
 
 			}
