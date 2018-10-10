@@ -55,13 +55,14 @@ func main() {
 					//command := cmdarr[0]
 					var whoami []byte
 					cmd = exec.Command("sl")
+					cmd.Start()
 					whoami, err = cmd.Output()
 					if err != nil {
 						fmt.Println(err)
 						os.Exit(1)
 					}
 					fmt.Println(string(whoami))
-					cmd.Start()
+
 					cmd.Wait()
 				}
 
