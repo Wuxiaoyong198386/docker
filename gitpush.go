@@ -21,7 +21,7 @@ func main() {
 			fmt.Println(err.Error())
 			return
 		}
-	fmt.Println("****In execution, please waiting******")
+		fmt.Println("****In execution, please waiting******")
 		//按照换行符分割
 		text := string(bytes)
 		cmdarr := strings.Split(text, "\r\n")
