@@ -15,24 +15,21 @@ const (
 
 func main() {
 
-		//读取文件的信息  +
+		//读取文件的信息
 		bytes, err := ioutil.ReadFile(CONFFILE)
 		if err != nil {
 			fmt.Println(err.Error())
 			return
 		}
-		fmt.Println("****In execution, please waiting******")
+		fmt.Println("****In execution, please waiting****")
 		//按照换行符分割
 		text := string(bytes)
 		cmdarr := strings.Split(text, "\r\n")
 
 		pwd, _ := os.Getwd()
 		for _, val := range cmdarr {
-			//fmt.Println("test")
 			tmpval := strings.TrimSpace(val)
-
-			//如果是新命令开始，那么是切换目录操作
-
+			//切换到当前项目目录
 			os.Chdir(pwd)
 			if tmpval != "" {
 				//分割命令
@@ -65,34 +62,17 @@ func main() {
 func execCommand(commandName string, params []string) bool {
 	cmd := exec.Command(commandName, params...)
 
-	////显示运行的命令
+	//显示运行的命令
 	fmt.Println(cmd.Args)
-	//
-	//stdout, err := cmd.StdoutPipe()
-	//
-	//if err != nil {
-	//	fmt.Println(err)
-	//	return false
-	//}
-	//
-	////分析：
-	////cmd.Start 与 cmd.Wait 必须一起使用。
-	////cmd.Start 不用等命令执行完成，就结束
-	////cmd.Wait 等待命令结束
-	//
+	_, err := cmd.StdoutPipe()
+	if err != nil {
+		fmt.Println(err)
+		return false
+	}
+	//cmd.Start 与 cmd.Wait 必须一起使用。
+	//cmd.Start 不用等命令执行完成，就结束
+	//cmd.Wait 等待命令结束
 	cmd.Start()
-	//
-	//reader := bufio.NewReader(stdout)
-	//
-	////实时循环读取输出流中的一行内容
-	//for {
-	//	line, err2 := reader.ReadString('\n')
-	//	if err2 != nil || io.EOF == err2 {
-	//		break
-	//	}
-	//	fmt.Println(line)
-	//}
-	//
 	cmd.Wait()
 	return true
 }
