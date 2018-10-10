@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"os"
 	"os/exec"
+	"os/signal"
 	"strings"
 )
 
@@ -53,6 +54,12 @@ func main() {
 				execCommand(command, params)
 			}
 		}
+		//退到命令行状态，效果如同ctrl+c
+		c := make(chan os.Signal, 1)
+		signal.Notify(c, os.Interrupt, os.Kill)
+
+		s := <-c
+		fmt.Println("Got signal:", s)
 }
 
 //执行命令函数
