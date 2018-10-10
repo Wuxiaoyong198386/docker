@@ -70,7 +70,7 @@ func execCommand(commandName string, params []string) bool {
 		return false
 	}
 	//cmd.Start 与 cmd.Wait 必须一起使用。
-	//cmd.Start 不用等命令执行完成，就结束
+	//cmd.Start 不用等命令执行完成， 就结束
 	//cmd.Wait 等待命令结束
 	cmd.Start()
 	cmd.Wait()
