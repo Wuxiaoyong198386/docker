@@ -62,6 +62,10 @@ func main() {
 		}
 
 		fmt.Println("***********************")
+		fmt.Println("****             ******")
+		fmt.Println("****   push ok   ******")
+		fmt.Println("****             ******")
+		fmt.Println("***********************")
 
 
 }
