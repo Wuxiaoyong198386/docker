@@ -16,7 +16,7 @@ const (
 )
 
 func main() {
-	//for {
+
 		//读取文件的信息
 		bytes, err := ioutil.ReadFile(CONFFILE)
 		if err != nil {
@@ -28,20 +28,19 @@ func main() {
 		text := string(bytes)
 		cmdarr := strings.Split(text, "\r\n")
 
-		//是否新的开始
-		isBegin := 1
+		pwd, _ := os.Getwd()
 		for _, val := range cmdarr {
 			tmpval := strings.TrimSpace(val)
 
 			//如果是新命令开始，那么是切换目录操作
-			if tmpval != "" && isBegin == 1 {
-				os.Chdir(tmpval)
-			} else if tmpval != "" {
+
+			os.Chdir(pwd)
+			if tmpval != "" {
 				//分割命令
 				cmdarr := strings.Split(tmpval, " ")
 				//命令名称
 				command := cmdarr[0]
-				if cmdarr[1]=="commit"{
+				if cmdarr[1]=="commit" {
 					for idx, args := range os.Args {
 						if idx==1 {
 							cmdarr[3]=args
@@ -54,15 +53,9 @@ func main() {
 				execCommand(command, params)
 			}
 
-			//如果是空行，说明新的命令开始
-			if tmpval == "" {
-				isBegin = 1
-				continue
-			} else {
-				isBegin = 0
-			}
+
 		}
-	//}
+
 }
 
 //执行命令函数
