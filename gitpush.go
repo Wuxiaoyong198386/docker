@@ -50,7 +50,7 @@ func main() {
 			}
 		}
 
-		fmt.Println("****push ok******")
+		fmt.Println("****push ok****")
 
 
 }
