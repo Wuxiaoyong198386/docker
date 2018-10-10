@@ -17,7 +17,7 @@ const (
 
 func main() {
 
-		//读取文件的信息
+		//读取文件的信息+
 		bytes, err := ioutil.ReadFile(CONFFILE)
 		if err != nil {
 			fmt.Println(err.Error())
@@ -38,7 +38,7 @@ func main() {
 			if tmpval != "" {
 				//分割命令
 				cmdarr := strings.Split(tmpval, " ")
-				//命令名称
+				//添加commit说明，如果为空，默认为“提交说明”
 				command := cmdarr[0]
 				if cmdarr[1]=="commit" {
 					for idx, args := range os.Args {
