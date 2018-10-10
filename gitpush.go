@@ -53,8 +53,10 @@ func main() {
 				execCommand(command, params)
 			}
 		}
-		//退到命令行状态，效果如同ctrl+c
-		os.Exit(0)
+
+
+		fmt.Println("××××××××××××××××××××")
+
 }
 
 //执行命令函数
