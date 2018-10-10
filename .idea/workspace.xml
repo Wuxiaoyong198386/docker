@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aa5dac1-97b3-4f40-be99-53064829eac8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gitpush.go" beforeDir="false" afterPath="$PROJECT_DIR$/gitpush.go" afterDir="false" />
-    </list>
+    <list default="true" id="0aa5dac1-97b3-4f40-be99-53064829eac8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gitpush.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+            <state relative-caret-position="417">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="e#14#87#0" expanded="true" />
               </folding>
@@ -179,8 +177,8 @@
     <entry file="file://$PROJECT_DIR$/auto_git_test.go" />
     <entry file="file://$PROJECT_DIR$/gitpush.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        <state relative-caret-position="417">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="e#14#87#0" expanded="true" />
           </folding>
