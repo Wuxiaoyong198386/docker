@@ -1,0 +1,4 @@
+/home/wuxiaoyong/wwwroot/docker
+git add .
+git commit -m 'test'
+git push
