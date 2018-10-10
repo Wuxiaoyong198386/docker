@@ -28,7 +28,7 @@ func main() {
 
 		pwd, _ := os.Getwd()
 		for _, val := range cmdarr {
-			fmt.Println("test")
+			//fmt.Println("test")
 			tmpval := strings.TrimSpace(val)
 
 			//如果是新命令开始，那么是切换目录操作
