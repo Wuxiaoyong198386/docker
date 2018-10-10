@@ -82,11 +82,11 @@ func execCommand(commandName string, params []string) bool {
 
 	//实时循环读取输出流中的一行内容
 	for {
-		line, err2 := reader.ReadString('\n')
+		_, err2 := reader.ReadString('\n')
 		if err2 != nil || io.EOF == err2 {
 			break
 		}
-		fmt.Println(line)
+		//fmt.Println(line)
 	}
 
 	cmd.Wait()
