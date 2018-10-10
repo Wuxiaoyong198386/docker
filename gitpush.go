@@ -37,19 +37,25 @@ func main() {
 			if tmpval != "" {
 				//分割命令
 				cmdarr := strings.Split(tmpval, " ")
-				//添加commit说明，如果为空，默认为“提交说明”
-				command := cmdarr[0]
-				if cmdarr[1]=="commit" {
-					for idx, args := range os.Args {
-						if idx==1 && args!= "" {
-							cmdarr[3]=args
+				if len(cmdarr)>1 {
+					//添加commit说明，如果为空，默认为“提交说明”
+					command := cmdarr[0]
+					if cmdarr[1] == "commit" {
+						for idx, args := range os.Args {
+							if idx == 1 && args != "" {
+								cmdarr[3] = args
+							}
 						}
 					}
+					//命令参数
+					params := cmdarr[1:]
+					//执行cmd命令
+					execCommand(command, params)
+				}else{
+					command := cmdarr[0]
+					exec.Command(command)
 				}
-				//命令参数
-				params := cmdarr[1:]
-				//执行cmd命令
-				execCommand(command, params)
+
 			}
 		}
 
