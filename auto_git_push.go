@@ -41,6 +41,13 @@ func main() {
 				cmdarr := strings.Split(tmpval, " ")
 				//命令名称
 				command := cmdarr[0]
+				if cmdarr[1]=="commit"{
+					for idx, args := range os.Args {
+						if idx==1 {
+							cmdarr[3]=args
+						}
+					}
+				}
 				//命令参数
 				params := cmdarr[1:]
 				//执行cmd命令
