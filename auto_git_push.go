@@ -42,7 +42,7 @@ func main() {
 				command := cmdarr[0]
 				if cmdarr[1]=="commit" {
 					for idx, args := range os.Args {
-						if idx==1 {
+						if idx==1 && args!= "" {
 							cmdarr[3]=args
 						}
 					}
@@ -52,10 +52,7 @@ func main() {
 				//执行cmd命令
 				execCommand(command, params)
 			}
-
-
 		}
-
 }
 
 //执行命令函数
