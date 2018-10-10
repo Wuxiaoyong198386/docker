@@ -61,8 +61,7 @@ func main() {
 //执行命令函数
 //commandName 命名名称，如cat，ls，git等
 //params 命令参数，如ls -l的-l，git log 的log等
-//注：本函数转载#http://studygolang.com/articles/4004
-//	  作者：windvix
+
 func execCommand(commandName string, params []string) bool {
 	cmd := exec.Command(commandName, params...)
 
