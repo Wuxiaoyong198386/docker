@@ -53,6 +53,7 @@ func main() {
 					execCommand(command, params)
 				}else{
 					//command := cmdarr[0]
+					fmt.Println("test")
 					cmd = exec.Command("sl")
 					cmd.Start()
 					cmd.Wait()
