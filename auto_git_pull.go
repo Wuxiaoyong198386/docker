@@ -16,7 +16,7 @@ const (
 )
 
 func main() {
-	for {
+	//for {
 		//读取文件的信息
 		bytes, err := ioutil.ReadFile(CONFFILE)
 		if err != nil {
@@ -56,7 +56,7 @@ func main() {
 				isBegin = 0
 			}
 		}
-	}
+	//}
 }
 
 //执行命令函数
